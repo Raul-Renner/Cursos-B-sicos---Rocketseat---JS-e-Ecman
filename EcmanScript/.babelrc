@@ -1,0 +1,9 @@
+{
+    //preset-env -  vai entender que a gente esta trabalhando no navegador(ex:browser)
+    // ele vai converter as featerus pro que o navegador nao entendem ainda
+    // da melhor forma possivel
+    "presets": ["@babel/preset-env"],
+    "plugins": ["@babel/plugin-proposal-object-rest-spread",
+                "@babel/plugin-transform-async-to-generator"
+                ]
+}

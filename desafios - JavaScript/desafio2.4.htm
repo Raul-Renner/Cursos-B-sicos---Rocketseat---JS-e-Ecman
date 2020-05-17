@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="formItens">
+        <input type="text" placeholder="Nome dos itens" id="item">
+        <button class="btn_form" type="submit">Adicionar Item</button>
+    </div>
+    <div class="lista">
+        <ul class="lista_itens">
+
+        </ul>
+    </div>
+
+    <script>
+        var nomes = ["Guilherme","Luzivan", "Raul", "Joao"];
+        var listaElement = document.querySelector('.lista_itens');
+
+        var item;
+        function listarNomes(nomes){
+            for(value of nomes){
+                item = document.createElement('li');
+                item.textContent = value;
+                listaElement.appendChild(item);
+            }
+        }
+        listarNomes(nomes);
+        function adicionarItens(){  
+            var btn_form = document.querySelector('.btn_form');
+            var inputElement = document.querySelector('#item');
+
+
+            btn_form.onclick = function(){
+                var inputValue = inputElement.value;
+                if(inputValue == ""){
+                    alert('Preencha  o campo!');
+
+                }else {
+                    var liElement = document.createElement('li');
+                    liElement.textContent = inputValue;
+                    listaElement.appendChild(liElement);
+                    alert('item salvo com sucesso!')
+   
+                }
+
+                inputElement.value = "";
+
+            }
+        }    
+        adicionarItens();
+       
+
+    </script>
+</body>
+</html>
